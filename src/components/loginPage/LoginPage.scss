@@ -1,0 +1,49 @@
+.LoginPage {
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    font-size: 50px;
+  }
+
+  &__form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+
+    & > label {
+      margin: 10px 0;
+    }
+
+    & > input {
+      padding: 10px;
+      background-color: white;
+      border: gray;
+      box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 10px -10px;
+    }
+
+    &__loginButton {
+      margin-top: 20px;
+      cursor: pointer;
+      background-color: lightcoral;
+      border: none;
+      color: white;
+      border-radius: 10px;
+      padding: 10px;
+    }
+  }
+  &__registerButton {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: teal;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+  }
+}
