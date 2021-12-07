@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./RegisterPage.scss";
 
 export default function RegisterPage() {
@@ -14,7 +15,9 @@ export default function RegisterPage() {
         <input type="password" placeholder="Enter your password" />
         <button className="RegisterPage__form__RegisterButton">Register</button>
       </form>
-      <button className="RegisterPage__loginButton">Login</button>
+      <button className="RegisterPage__loginButton">
+        <Link to='/logout'>LOGIN</Link>
+      </button>
     </div>
   );
 }

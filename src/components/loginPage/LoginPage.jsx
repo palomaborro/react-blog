@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./LoginPage.scss";
 
 export default function LoginPage() {
@@ -12,7 +13,9 @@ export default function LoginPage() {
         <input type="password" placeholder="Enter your password" />
         <button className="LoginPage__form__loginButton">Login</button>
       </form>
-      <button className="LoginPage__registerButton">Register</button>
+      <button className="LoginPage__registerButton">
+        <Link to='/logout'>REGISTER</Link>
+      </button>
     </div>
   );
 }
