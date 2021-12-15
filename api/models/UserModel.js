@@ -1,8 +1,5 @@
 const mongoose = require('mongoose');
 
-const EMAIL_PATTERN =
-  /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-
 const UserSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -14,8 +11,7 @@ const UserSchema = new mongoose.Schema({
         required: true,
         unique: true,
         trim: true,
-        lowercase: true,
-        match: [EMAIL_PATTERN, "Email is invalid"]
+        lowercase: true
     },
     password: {
         type: String,
