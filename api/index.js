@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const authRoute = require('./routes/authRoutes');
+const authRoutes = require('./routes/authRoutes');
+const usersRoutes = require('./routes/usersRoutes');
 
 const DB_NAME = 'Blog';
 const URI = process.env.MONGODB_URI || 'mongodb://localhost:27017';
@@ -15,7 +16,8 @@ mongoose
   .then(() => console.log(`Succesfully connected to ${DB_NAME}`))
   .catch((error) => console.error("Error connecting to DB", error));
 
-  app.use('/', authRoute);
+  app.use('/api/auth', authRoutes);
+  app.use('/api/users', usersRoutes);
 
 app.listen('5000', () => {
     console.log('running')
