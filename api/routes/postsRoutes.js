@@ -5,7 +5,7 @@ const Post = require("../models/PostModel");
 router.post("/", async (req, res) => {
   const post = new Post(req.body);
   try {
-    const savedPost = await newPost.save();
+    const savedPost = await post.save();
     res.status(200).json(savedPost);
   } catch (err) {
     res.status(500).json(err);

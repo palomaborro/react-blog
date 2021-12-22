@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
 const usersRoutes = require('./routes/usersRoutes');
 const postsRoutes = require('./routes/postsRoutes');
+const categoriesRoutes = require('./routes/categoriesRoutes');
 
 const DB_NAME = 'Blog';
 const URI = process.env.MONGODB_URI || 'mongodb://localhost:27017';
@@ -20,6 +21,7 @@ mongoose
   app.use('/api/auth', authRoutes);
   app.use('/api/users', usersRoutes);
   app.use('/api/posts', postsRoutes);
+  app.use('/api/categories', categoriesRoutes);
 
 app.listen('5000', () => {
     console.log('running')
