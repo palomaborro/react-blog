@@ -1,38 +1,30 @@
 import React from "react";
 import "./Post.scss";
 
-export default function Post() {
+export default function Post({ post }) {
   return (
     <div className="Post">
+    {post.postPicture && (
       <img
         className="Post__img"
-        src="https://paperetsdecolorets.es/wp-content/uploads/2019/10/placeholder.png"
+        src={post.postPicture}
         alt=""
       />
+    )}
       <div className="Post__info">
         <div className="Post__info__categories">
-          <span className="Post__info__categories__individual">Music</span>
-          <span className="Post__info__categories__individual">Life</span>
+        {post.categories.map((category) => (
+          <span className="Post__info__categories__individual">{category.name}</span>
+        ))}
         </div>
         <span className="Post__info__title">
-          Dolor quis cupidatat sit laboris culpa.
+          {post.title}
         </span>
         <hr />
-        <span className="Post__info__date">1 hour ago</span>
+        <span className="Post__info__date">{new Date(post.createdAt).toDateString()}</span>
       </div>
       <p className='Post__info__description'>
-        Sunt nostrud cupidatat enim esse qui eu elit. Pariatur elit id veniam
-        incididunt anim cillum. Ullamco sunt reprehenderit non deserunt fugiat
-        aliquip sunt do quis eiusmod est dolor. Ipsum aliquip proident occaecat
-        velit consequat minim proident tempor Lorem.
-        Sunt nostrud cupidatat enim esse qui eu elit. Pariatur elit id veniam
-        incididunt anim cillum. Ullamco sunt reprehenderit non deserunt fugiat
-        aliquip sunt do quis eiusmod est dolor. Ipsum aliquip proident occaecat
-        velit consequat minim proident tempor Lorem.
-        Sunt nostrud cupidatat enim esse qui eu elit. Pariatur elit id veniam
-        incididunt anim cillum. Ullamco sunt reprehenderit non deserunt fugiat
-        aliquip sunt do quis eiusmod est dolor. Ipsum aliquip proident occaecat
-        velit consequat minim proident tempor Lorem.
+        {post.description}
       </p>
     </div>
   );
